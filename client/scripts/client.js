@@ -1,9 +1,13 @@
 var createdListing = {};
 
 $(document).ready(function(){
+  init();
+});
+
+function init(){
   getListings();
   enable(true);
-});
+}
 
 function enable(value){
   if(value){
@@ -14,9 +18,9 @@ function enable(value){
 
 function submitListing(){
   if(createdListing.type     === undefined ||
-     $("#submitCity").val()  === undefined ||
-     $("#submitValue").val() === undefined ||
-     $("#submitSqft").val()  === undefined)
+     $("#submitCity").val()  === "" ||
+     $("#submitValue").val() === "" ||
+     $("#submitSqft").val()  === "")
    {
      $("#error").text("ERROR: ENTER ALL INFORMATION TO SUBMIT LISTING");
      return;
@@ -56,7 +60,6 @@ function appendListings(array){
 }
 
 function appendListing(listing, $el){
-  //append a house
   if(listing.cost){
     $el.append("<div class='lead col-md-3 listing-head'>House for Sale </div>");
     $el.append("<div class='lead col-md-3'>" + listing.city + " </div>");
@@ -69,8 +72,6 @@ function appendListing(listing, $el){
     $el.append("<div class='lead col-md-3'>" + listing.sqft + " sqft.</div>");
   }
 }
-
-// RESTful Interface
 
 function getListings(){
   $.ajax({
