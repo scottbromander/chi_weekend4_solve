@@ -1,0 +1,11 @@
+.listing:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.listing > div {
+  margin-top: 16px;
+}
+
+.listing {
+  border: 1px dotted black;
+}

@@ -2,15 +2,23 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 
-// var ApartmentSchema = mongoose.Schema({
-//   rent : Number,
-//   sqft : Number,
-//   city : String
-// });
+var ListingSchema = mongoose.Schema({});
 
-// var Apartments = mongoose.model("Apartments", ApartmentSchema);
-// var Houses = mongoose.model("Houses", HouseSchema);
-var Listings = mongoose.model("Listings");
+var ApartmentSchema = mongoose.Schema({
+  rent : Number,
+  sqft : Number,
+  city : String
+});
+
+var HouseSchema = mongoose.Schema({
+  cost : Number,
+  sqft : Number,
+  city : String
+});
+
+var Listings = mongoose.model("listings", ListingSchema, "listings");
+var Apartments = mongoose.model("apartments", ApartmentSchema, "listings");
+var Houses = mongoose.model("houses", HouseSchema, "listings");
 
 router.get("/", function(req,res){
   Listings.find({}, function(err, listings){

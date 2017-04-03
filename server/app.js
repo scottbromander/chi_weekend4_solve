@@ -3,10 +3,12 @@ var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
 var db = require("./modules/db");
+var listings = require("./routes/listings");
 
 app.set("port", (process.env.PORT || 5000));
 
 app.use(express.static("./server/public"));
+app.use("/listings", listings);
 
 app.get("/", function(req,res){
   res.sendFile(path.resolve("./server/public/views/index.html"));

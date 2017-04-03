@@ -31,11 +31,20 @@ module.exports = function(grunt) {
               "bootstrap.css"
            ],
            dest: "server/public/vendors/bootstrap/"
+         },
+         css : {
+           expand: true,
+           cwd: "client/styles",
+           src: [
+              "style.css"
+           ],
+           dest: "server/public/styles/"
          }
        },
        watch: {
-        files: ['client/script/*.js',
-                'client/views/*.html'],
+        files: ['client/scripts/*.js',
+                'client/views/*.html',
+                'client/styles/*.css'],
         tasks: ['uglify', 'copy']
       }
     });
