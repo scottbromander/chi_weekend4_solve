@@ -4,16 +4,59 @@
     <meta charset="utf-8">
     <title>Chi Weekend 4 Solve</title>
 
-    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/style.css" />
 
     <script type="text/javascript" src="vendors/jquery/jquery.js"></script>
+    <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.js"></script>
     <script type="text/javascript" src="scripts/client.min.js"></script>
 
   </head>
   <body>
-    <div id="listingContainer" class="container">
+    <div id="addContainer" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center">Add a Listing</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" id="submitCity" class="form-control" placeholder="City">
+        </div>
+        <div class="col-md-4">
+          <input type="number" id="submitValue" class="form-control" placeholder="Cost or Rent">
+        </div>
+        <div class="col-md-4">
+          <input type="number" id="submitSqft" class="form-control" placeholder="Square Feet">
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="justify col-md-12">
+          <div class="btn-group btn-group-justified">
+            <a class="btn btn-primary selectType" data-type="house">House</a>
+            <a class="btn btn-primary selectType" data-type="apartment">Apartment</a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="justify col-md-12">
+          <div class="btn-group btn-group-justified">
+            <a class="btn btn-primary" id="submitListing">Submit Listing</a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead text-center" id="error"></p>
+        </div>
+      </div>
+      <hr />
+    </div>
 
+    <div id="listingContainer" class="container">
     </div>
   </body>
 </html>

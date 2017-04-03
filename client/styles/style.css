@@ -9,3 +9,11 @@
 .listing {
   border: 1px dotted black;
 }
+
+.highlight {
+  background-color: darkblue;
+}
+
+#error {
+  color: red;
+}
