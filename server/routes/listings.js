@@ -67,12 +67,4 @@ router.post("/apartment", function(req,res){
   });
 });
 
-router.put("/", function(req,res){
-
-});
-
-router.delete("/", function(req,res){
-
-});
-
 module.exports = router;

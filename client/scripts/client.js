@@ -42,6 +42,7 @@ function submitListing(){
   $("#submitSqft").val("");
   $(".selectType").removeClass("highlight");
   createdListing = {};
+  $("#error").text("");
 }
 
 function selectType(){
